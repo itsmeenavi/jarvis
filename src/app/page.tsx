@@ -1,21 +1,11 @@
 // src/app/page.tsx
+"use client"; // Keep this if components inside use client features
 
-import Head from "next/head";
-import VoiceRecognition from "./components/VoiceRecognition";
+import VoiceRecognition from './components/VoiceRecognition'; // Import the component
 
+// Define the Page component for this route
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Voice Chat with Gemini API</title>
-        <meta name="description" content="Voice recognition with Gemini API" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1>Talk to Gemini!</h1>
-        <VoiceRecognition />
-      </main>
-    </div>
+    <VoiceRecognition /> // Render the imported component
   );
 }

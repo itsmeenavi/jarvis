@@ -4,6 +4,7 @@
 
 import { useState } from "react";
 import axios from "axios";
+import { FaMicrophone, FaStop } from 'react-icons/fa'; // Import icons
 
 declare global {
   interface Window {
@@ -68,14 +69,34 @@ const VoiceRecognition = () => {
   };
 
   return (
-    <div className="voice-recognition-container">
-      <button onClick={startRecording} disabled={isRecording} className="record-btn">
-        {isRecording ? "Recording..." : "Start Voice Recognition"}
+    <div className="voice-container"> {/* Changed class name for clarity */}
+      <button
+        onClick={startRecording}
+        disabled={isRecording}
+        className="record-button" // Use a more specific class
+      >
+        {isRecording ? (
+          <><FaStop className="icon" /> Recording...</>
+        ) : (
+          <><FaMicrophone className="icon" /> Start Recording</>
+        )}
       </button>
-      <div className="output">
-        <p className="transcript">Transcript: {transcript}</p>
-        <p className="response">Response: {response}</p>
-      </div>
+      {(transcript || response) && ( // Only show output area if there's something to show
+        <div className="output-area"> {/* Changed class name */}
+          {transcript && (
+            <div className="transcript-section">
+              <h3>Your Input:</h3>
+              <p>{transcript}</p>
+            </div>
+          )}
+          {response && (
+             <div className="response-section">
+               <h3>AI Response:</h3>
+               <p>{response}</p>
+             </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

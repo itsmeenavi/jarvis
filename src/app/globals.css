@@ -68,3 +68,93 @@ footer p {
     padding: 20px;
   }
 }
+
+/* Voice Recognition Component Styles */
+.voice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Limit width for better appearance */
+  margin: 20px auto; /* Center component */
+}
+
+.record-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  display: flex; /* Align icon and text */
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+  min-width: 200px; /* Ensure minimum width */
+}
+
+.record-button:hover {
+  background-color: #0056b3;
+}
+
+.record-button:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+
+.record-button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.record-button .icon {
+  font-size: 1.2em; /* Adjust icon size */
+}
+
+.output-area {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.transcript-section,
+.response-section {
+  margin-bottom: 15px;
+}
+
+.transcript-section:last-child,
+.response-section:last-child {
+  margin-bottom: 0;
+}
+
+.output-area h3 {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ddd; /* Separator line */
+  padding-bottom: 5px;
+}
+
+.output-area p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap; /* Preserve line breaks */
+  word-wrap: break-word; /* Prevent long text overflow */
+}
+
+.unsupported {
+  text-align: center;
+  color: #dc3545; /* Error color */
+  margin-top: 20px;
+  font-weight: bold;
+}
